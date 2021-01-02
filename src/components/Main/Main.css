@@ -1,0 +1,32 @@
+.container {
+  background-color: #fcffe9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.fortune-button {
+  background-color: #caefd1;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 40px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.fortune-button:active {
+  transform: scale(0.95);
+}
+
+.fortune-button:focus {
+  outline: 0;
+}
+
+.fortune-image {
+  margin: 10px auto;
+}
+
+.fortune {
+  font-size: 20px;
+  margin: 10px auto;
+}

@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { FORTUNES } from '../shared/fortunesData';
 
-function Fortunes(props) {
-  let randomNumber = Math.floor(Math.random() * (FORTUNES.length));
-  document.querySelector('fortunesDisplay').innerHTML = fortune[randomNumber];
 
-  return (
-    <div className="fortune-text">
+class Fortunes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fortune: null,
+    };
+  }
 
-    </div>
-  );
-};
+  newFortune() {
+    const randomNum = Math.floor(Math.random() * fortune.length);
+    console.log(fortune[randomNum]);
+
+    let randomFortune = fortunes[randomNum];
+
+    return this.setState({
+      fortune: randomFortune['fortune'],
+    });
+  }
+
+  render() {
+    return <div className="fortune-text">{state.fortune}</div>;
+  }
+}
 
 export default Fortunes;

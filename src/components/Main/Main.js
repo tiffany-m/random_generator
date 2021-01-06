@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Fortunes from './components/Fortunes';
+import Fortunes from '../Fortunes';
 import './Main.css'
 
 class Main extends Component {

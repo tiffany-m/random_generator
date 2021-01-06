@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Fortunes from '../Fortunes';
+import Fortunes from '../Fortunes'
 import './Main.css'
 
 class Main extends Component {
@@ -9,7 +9,7 @@ class Main extends Component {
         <h3>Fortune Cookie Generator</h3>
         <img className='fortune-image' src='cookie.png' alt='cookie' />
         <Fortunes />
-        <button className='fortune-button'>Open a cookie!</button>
+        {/* <button className='fortune-button'>Open a cookie!</button> */}
       </div>
     )
   }

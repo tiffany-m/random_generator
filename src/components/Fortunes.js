@@ -34,8 +34,8 @@ class Fortunes extends Component {
         <div className="fortune-text">{cookieOpened ? fortune : ''}</div>
         <button className="fortune-button" onClick={() => this.newFortune()}>
           {cookieOpened
-            ? 'Do you want to open a new cookie?'
-            : 'Open a cookie'}
+            ? 'Do you want to open another cookie?'
+            : 'Open the cookie!'}
         </button>
       </>
     );

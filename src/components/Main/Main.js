@@ -7,9 +7,8 @@ class Main extends Component {
     return (
       <div className='container'>
         <h3>Fortune Cookie Generator</h3>
-        <img className='fortune-image' src='cookie.png' alt='cookie' />
+        <img className='fortune-image' src='cookie1.png' alt='cookie' />
         <Fortunes />
-        {/* <button className='fortune-button'>Open a cookie!</button> */}
       </div>
     )
   }

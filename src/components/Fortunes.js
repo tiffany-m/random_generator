@@ -1,48 +1,45 @@
-import React, { Component } from 'react'
-import { FORTUNES } from '../shared/fortunesData'
+import React, { Component } from 'react';
+import { FORTUNES } from '../shared/fortunesData';
 
-const randomNum = Math.floor(Math.random() * FORTUNES.length)
+const randomNum = Math.floor(Math.random() * FORTUNES.length);
 class Fortunes extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     fortune: null,
-  //   };
+  // state = {
+  //   fortune: FORTUNES[randomNum].fortune,
   // }
 
   state = {
-    fortune: FORTUNES[randomNum].fortune,
-  }
-
-  componentDidMount() {
-    console.log('fortunes', FORTUNES)
-  }
+    fortune: '',
+    cookieOpened: false,
+  };
 
   newFortune() {
-    //const randomNum = Math.floor(Math.random() * fortune.length)
-    const randomNumber = Math.floor(Math.random() * FORTUNES.length)
+    const { cookieOpened } = this.state;
 
-    //console.log(fortune[randomNum])
+    // const cookieOpened = this.state.cookieOpened;  above is destructured version
 
-    //let randomFortune = fortunes[randomNum]
-    const randomFortune = FORTUNES[randomNumber].fortune
+    const randomNumber = Math.floor(Math.random() * FORTUNES.length);
 
-    // return this.setState({
-    //   fortune: randomFortune['fortune'],
-    // })
-    this.setState({ fortune: randomFortune })
+    const randomFortune = FORTUNES[randomNumber].fortune;
+
+    this.setState({
+      fortune: randomFortune,
+      cookieOpened: !cookieOpened,
+    });
   }
 
   render() {
+    const { cookieOpened, fortune } = this.state;
     return (
       <>
-        <div className='fortune-text'>{this.state.fortune}</div>
-        <button className='fortune-button' onClick={() => this.newFortune()}>
-          Open a cookie!
+        <div className="fortune-text">{cookieOpened ? fortune : ''}</div>
+        <button className="fortune-button" onClick={() => this.newFortune()}>
+          {cookieOpened
+            ? 'Do you want to open a new cookie?'
+            : 'Open a cookie'}
         </button>
       </>
-    )
+    );
   }
 }
 
-export default Fortunes
+export default Fortunes;

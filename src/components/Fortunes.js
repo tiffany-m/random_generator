@@ -3,22 +3,9 @@ import { FORTUNES } from '../shared/fortunesData';
 
 const randomNum = Math.floor(Math.random() * FORTUNES.length);
 class Fortunes extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fortune: '',
-      image: 'cookie1.png',
-      cookieOpened: false,
-  };
-  // state = {
-  //   fortune: FORTUNES[randomNum].fortune,
-  // }
-
-  // state = {
-  //   fortune: '',
-  //   image: 'cookie1.png',
-  //   cookieOpened: false,
-  // };
+  state = {
+    fortune: FORTUNES[randomNum].fortune,
+  }
 
   newFortune() {
     const { cookieOpened } = this.state;
@@ -39,7 +26,7 @@ class Fortunes extends Component {
     const { cookieOpened, fortune } = this.state;
     return (
       <>
-        <img className="fortune-image" src={props.image} alt="cookie" />
+        <img className="fortune-image" src="cookie1.png" alt="cookie" />
         <div className="fortune-text">{cookieOpened ? fortune : ''}</div>
         <button className="fortune-button" onClick={() => this.newFortune()}>
           {cookieOpened
